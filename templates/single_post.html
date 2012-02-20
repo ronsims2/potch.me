@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title -%}
+  potch dot me | {{ post.title }}
+{%- endblock %}
+
+{% block content %}
+  {{ post.html }}
+{% endblock %}

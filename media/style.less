@@ -1,127 +1,15 @@
 @import 'lib';
 
-@dark: #383430;
-@light: #fffdfc;
-@serif: Garamond, serif;
-
 body {
-    font: 14pt @serif;
-    line-height: 1.2;
-    color: @dark;
-    background: @light;
+    background: #f8f8f8;
+    line-height: 1.5em;
 }
 
-h1, h2, h3, h4 {
-    color: lighen(@dark, 10%);
-}
-h2, h3, h4 {
-    margin-bottom: 1rem;
-}
-h1 { font-size: 2em; }
-h2 { font-size: 1.75em; }
-h3 { font-size: 1.25em; 
-     color: lighten(@dark, 2%);
-}
-h4 { font-size: .75em; }
-
-#page {
-    max-width: 640px;
-    padding: 30px 20px;
-    margin: 0 auto;
+article, h1 {
+    width: 550px;
+    margin: .5em auto;
 }
 
 article {
-    margin-top: 1em;
-    header {
-        margin-bottom: 1rem;
-        h2 {
-            margin-bottom: 0;
-        }
-        h4 {
-            font-size: .75em;
-            color: lighten(@dark, 40%);
-            margin-left: 2rem;
-        }
-    }
-    p {
-        text-indent: 2rem;
-        margin-bottom: 1rem;
-    }
-    blockquote {
-        margin: 2rem 0;
-        padding: 0 2rem;
-        position: relative;
-
-        &:before {
-            font-family: @serif;
-            content: '\201C';
-            font-size: 3em;
-            color: fadeOut(@dark, 70%);
-            position: absolute;
-            left: 0;
-            top: -20px;
-        }
-    }
-}
-.masthead {
-    border: 1px solid @dark;
-    border-width: 1px 0;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    h2 {
-        font-size: 1em;
-        position: absolute;
-        width: 100%;
-        left: 0;
-    }
-    h1 {
-        font-size: 40pt;
-   }
-}
-
-.gist {
-    font-size: 12px;
-    margin-bottom: 1rem;
-}
-
-.gist-highlight {
-    position: relative;
-    border-left: 3ex solid #eee;
-}
-
-.gist-highlight pre {
-    counter-reset: linenumbers;
-    div:before {
-        color: #aaa;
-        position: absolute;
-        width: 2.5ex;
-        left: -3ex;
-        text-align: right;
-        counter-increment: linenumbers;
-        content: counter(linenumbers);
-    }
-}
-
-.wf-hellenicwide1hellenicwide2-n4-active .masthead h1 small {
-    font-size: 15pt;
-    line-height: 45px;
-    white-space: nowrap;
-    margin-top: 12px;
-    text-align: center;
-    color: @light;
-    -moz-transform: translateY(-11px) rotate(-15deg);
-    position: relative;
-    &:after {
-        content: '';
-        width: 49px;
-        height: 49px;
-        display: block;
-        position: absolute;
-        top: -11px;
-        left: -1px;
-        border-radius: 48px;
-        z-index: -1;
-        background: @dark;
-    }
+    background: #fff;
 }
