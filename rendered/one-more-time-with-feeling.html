@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>potch dot me | One More Time, With Feeling</title>
+    <link rel="stylesheet/less" type="text/css" href="/media/reset.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/base.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/style.less">
+    <script src="/media/less-1.1.4.min.js"></script>
+    <script>
+      less.watch();
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>potch.me</h1>
+    </header>
+    
+  <article><h1>One More Time, With Feeling</h1>
+  <p>I'm Back!
+  </p><p>Maybe.
+  </p><p>Probably.
+  </p><p>
+    Honestly, "back" implies that I ever really
+    took a crack at this blogging thing with any seriousness at all before,
+    which is dubious. But I am going to, yet again, try to make a serious
+    effort at writing here regularly.
+  </p>
+  <p>
+    The <a href="http://potch.me/">ol' ball and chain</a>'s been pretty
+    busted the past few days. Why? As with anyone who wants to get back into
+    the habit of writing, you must first re-build your blogging system from
+    the ground-up. Obviously. <a href="http://github.com/potch/potch.me/">This time</a>, of course, will
+    be different. Armed
+    with my current favorite crop of technologies (which I will detail
+    below), I'm writing a set of tools let me build static pages (or, in my
+    far-too-literal to HTML5 system, <code>&lt;article&gt;</code>s) in my
+    preferred authoring environment: my beloved <a href="http://macromates.com/">code editor</a>.
+  </p>
+  <h2>(I start nerding out right about here.)</h2>
+  <p>
+    I've been writing HTML long enough that it's caused permanent brain
+    damage. I think of all documents in terms of markup, and deconstruct
+    magazines to
+    figure out how I'd float that sidebar <i>just</i> so. Naturally, then, I'm
+    authoring posts directly in HTML. If I'd like a post to look a little
+    different from the others, I have the ability to apply custom CSS and
+    JavaScript. Anything too far afield, I can generate a one-off page that
+    doesn't have to fit into the normal post template.
+  </p>
+  <p>
+    To aid me in this process, I've called in support from some technologies
+    I've fallen in love with in the line of duty working on my <a href="http://github.com/mozilla/zamboni/">current project</a> at Mozilla:
+  </p>
+  <ul><li>
+      <b>Python</b>: While I'd love to do this whole project in node.js, The
+      package and file-interaction capabilities are just better in Python
+      right now. I may migrate later, but getting up to speed quickly was my
+      initial goal, and Python's got my back.
+    </li><li>
+      <b>Jinja</b>: We replace Django's templating engine in our projects at
+      Mozilla with <a href="http://jinja.pocoo.org/">Jinja</a>. The "block"
+      pattern and template inheritance change the way you build markup
+      template to more closely match the object oriented way you (hopefully)
+      program. Fantastic stuff.
+    </li><li>
+      <b>PyQuery</b>: jQuery-style DOM manipulation in Python. Yes please.
+    </li><li>
+      <b>LESS</b>: Once you try <a href="http://lesscss.org/">LESS</a> or <a href="http://sass-lang.com/">Sass</a>, you'll wonder how you ever wrote
+      or maintained CSS before.
+  </li></ul><p>
+    I've got the code to the point where I decided to write this post, including a local server that watches files for changes. I'll be adding features and such (and writing about them here!), but this is my "Hello World".
+  </p>
+  <h2>Hello, World!</h2>
+  <p>There's plenty more where that came from!</p>
+  <p>I hope.</p>
+  
+  <p class="meta">
+    posted <span class="posted">2012-02-20</span>
+  </p>
+</article>
+
+    <script src="/media/jquery-1.6.2.js"></script>
+  </body>
+</html>

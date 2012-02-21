@@ -4,7 +4,7 @@ import SocketServer
 import threading
 
 
-from qdblog.renderer import render_list
+from qdblog.renderer import render_list, render_index
 
 def main():
     if (len(sys.argv) > 1):
@@ -15,6 +15,8 @@ def main():
             render_new();
         elif cmd == 'watch':
             watch()
+        elif cmd == 'rank':
+            render_index();
         else:
             print '...yes?'
     else:
@@ -52,5 +54,6 @@ def watch():
           render_list(changed, force=True)
       before = after
       time.sleep(1)
+
 
 main()

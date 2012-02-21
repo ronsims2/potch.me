@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> potch dot me </title>
+    <link rel="stylesheet/less" type="text/css" href="/media/reset.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/base.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/style.less">
+    <script src="/media/less-1.1.4.min.js"></script>
+    <script>
+      less.watch();
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>potch.me</h1>
+    </header>
+    
+  
+    <article>
+  <h1>One More Time, With Feeling</h1>
+  <p>I'm Back!
+  <p>Maybe.
+  <p>Probably.
+  <p>
+    Honestly, "back" implies that I ever really
+    took a crack at this blogging thing with any seriousness at all before,
+    which is dubious. But I am going to, yet again, try to make a serious
+    effort at writing here regularly.
+  </p>
+  <p>
+    The <a href="http://potch.me/">ol' ball and chain</a>'s been pretty
+    busted the past few days. Why? As with anyone who wants to get back into
+    the habit of writing, you must first re-build your blogging system from
+    the ground-up. Obviously. <a
+    href="http://github.com/potch/potch.me/">This time</a>, of course, will
+    be different. Armed
+    with my current favorite crop of technologies (which I will detail
+    below), I'm writing a set of tools let me build static pages (or, in my
+    far-too-literal to HTML5 system, <code>&lt;article&gt;</code>s) in my
+    preferred authoring environment: my beloved <a href="http://macromates.com/">code editor</a>.
+  </p>
+  <h2>(I start nerding out right about here.)</h2>
+  <p>
+    I've been writing HTML long enough that it's caused permanent brain
+    damage. I think of all documents in terms of markup, and deconstruct
+    magazines to
+    figure out how I'd float that sidebar <i>just</i> so. Naturally, then, I'm
+    authoring posts directly in HTML. If I'd like a post to look a little
+    different from the others, I have the ability to apply custom CSS and
+    JavaScript. Anything too far afield, I can generate a one-off page that
+    doesn't have to fit into the normal post template.
+  </p>
+  <p>
+    To aid me in this process, I've called in support from some technologies
+    I've fallen in love with in the line of duty working on my <a
+    href="http://github.com/mozilla/zamboni/">current project</a> at Mozilla:
+  </p>
+  <ul>
+    <li>
+      <b>Python</b>: While I'd love to do this whole project in node.js, The
+      package and file-interaction capabilities are just better in Python
+      right now. I may migrate later, but getting up to speed quickly was my
+      initial goal, and Python's got my back.
+    <li>
+      <b>Jinja</b>: We replace Django's templating engine in our projects at
+      Mozilla with <a href="http://jinja.pocoo.org/">Jinja</a>. The "block"
+      pattern and template inheritance change the way you build markup
+      template to more closely match the object oriented way you (hopefully)
+      program. Fantastic stuff.
+    <li>
+      <b>PyQuery</b>: jQuery-style DOM manipulation in Python. Yes please.
+    <li>
+      <b>LESS</b>: Once you try <a href="http://lesscss.org/">LESS</a> or <a
+      href="http://sass-lang.com/">Sass</a>, you'll wonder how you ever wrote
+      or maintained CSS before.
+  </ul>
+  <p>
+    I've got the code to the point where I decided to write this post, including a local server that watches files for changes. I'll be adding features and such (and writing about them here!), but this is my "Hello World".
+  </p>
+  <h2>Hello, World!</h2>
+  <p>There's plenty more where that came from!</p>
+  <p>I hope.</p>
+  
+  <p class="meta">
+    posted <span class="posted">2012-02-20</span>
+  </p>
+</article>
+  
+    <article>
+  <h1>He</h1>
+  <p>
+    <img src="http://people.mozilla.org/~mclaypotch/he.jpg" alt="Gary Kovacs, CEO of Mozilla, in his traditional launch day headdress" />
+  </p>
+
+  <h2>is <em>actually</em> the CEO of <del>Firefox</del> Mozilla.</h2>
+  
+  <p>
+    (<a href="http://verydemotivational.memebase.com/2011/02/25/demotivational-posters-he/">see the original</a>)
+  </p>
+  <p class="meta">posted on <span class="posted">2011-04-01</span></p>
+</article>
+  
+    <article>
+  <h1>Dumbo.</h1>
+  <p>
+    <a href="http://www.flickr.com/photos/thepotch/5066659663/">
+      <img alt="" src="http://farm5.static.flickr.com/4090/5066659663_0f2fb51cf5.jpg">
+    </a>
+  </p>
+
+  <p class="meta">
+    posted on <span class="posted">2010-10-10</span>
+  </p>
+</article>
+  
+    <article>
+  <h1>Cheap Eats- Tomato Sauce!</h1>
+  <p>
+    When I'm not embarking on various food adventures with my <a
+    href="http://twoguysonekitchen.com/" title="Two Guys, One Kitchen">
+    culinary partners in crime</a>, I'm a fairly frugal at-home
+    cook. One of my favorite things to make is my own tomato sauce. It's easy
+    to make a bunch at once, it's turbo-versatile, and it freezes well.
+  </p>
+
+  <p>My recipe for tomato sauce:</p>
+
+  <ul>
+    <li>1 large (28oz) can of crushed or whole tomatoes in juice/puree</li>
+    <li>1 carrot carrot, diced</li>
+    <li>1 stalk of celery, diced</li>
+    <li>1 medium onion, chopped</li>
+    <li>garlic (as much or as little as you fancy), chopped finely</li>
+    <li>spices (parsley oregano, basil) to taste</li>
+    <li>olive oil</li>
+  </ul>
+
+  <p>
+    In a large dutch oven or saucepan, heat up about a quarter cup of olive
+    oil (eyeballed, like most of the things in this recipe). Cook the celery
+    and carrot together with a pinch of salt over medium-low heat for about 5
+    minutes. Then add the onion, and cook for another 5-10 minutes, or until
+    everything is soft, and the onions are translucent. Push the vegetation
+    to the edges of the pan, and add a little more oil to the center. In
+    that, cook the garlic for another few minutes, until it's <em>just</em>
+    starting to take color. Then add the tomatoes and spices, stir, and bring
+    everything up to a simmer. Cover the pan, and simmer for at
+    <strong>least</strong> 45 minutes- but it will only get better from
+    there.
+  </p>
+
+  <p>What to do with it?</p>
+
+  <ul>
+    <li>
+      <strong>Poach eggs</strong> in about a cup of sauce in a small
+      saucepan. Serve with crusty bread or toast.
+    </li>
+    <li>
+      Use it as the base for a <strong>quick chili</strong>- Take a can of
+      black or kidney beans, 1/4 to 1/2 cup sauce, lots of cumin and chili
+      powder,
+      some hot sauce, and bring it all to a simmer. Then, I crush (or
+      stick-blend) some of the beans to thicken slightly, and cook for
+      another 15 minutes.
+    </li>
+    <li>
+      <strong>Spanish Rice</strong>- prepare rice, substituting half the
+      liquid with sauce. Add diced peppers and cumin. Cook normally, being
+      sure to stir often.
+    </li>
+  </ul>
+
+  <p>What <em>else</em> can you do with it?</p>
+
+  <p>Put it on pasta, dummy!</p>
+
+  <p class="meta">
+    posted <span class="posted">2010-04-17</span>
+  </p>
+</article>
+  
+
+    <script src="/media/jquery-1.6.2.js"></script>
+  </body>
+</html>
