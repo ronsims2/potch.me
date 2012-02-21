@@ -39,15 +39,19 @@ def write_post(file, content):
 def render_index(num_posts=5):
     path = './posts'
     posts = []
+    posts_dict = []
     for file in os.listdir(path):
         post = pq(read_post(file))
         date = post('.meta .posted').text()
         posts.append((file, date))
     print posts
     posts = sorted(posts, cmp=lambda a, b: cmp(b[1], a[1]))[:10]
-    posts = [{'html': read_post(post)} for post, ctime in posts]
+    for post, ctime in posts:
+        doc = pq(read_post(post))
+        doc('.meta').append(' <a href="/blog/%s">#</a>' % (post))
+        posts_dict.append({ 'html': doc.outerHtml() })
     template = env.get_template('index.html')
-    output = unicode(template.render({ 'posts': posts }))
+    output = unicode(template.render({ 'posts': posts_dict }))
     write_post('index.html', output)
 
 
