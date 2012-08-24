@@ -17,6 +17,55 @@
     </header>
     
   
+    <article><h1>How I develop Firefox OS apps on Desktop</h1>
+
+    <p>I've been working on the Marketplace for Mozilla's upcoming <a href="http://www.mozilla.org/en-US/b2g/">Firefox OS</a> mobile phone platform, which involves testing how web applications look and feel in the context of the OS. I can simulate the size of the phone in my browser using Firefox's amaxing <a href="http://paulrouget.com/e/devtoolsupdate/">Responsive Mode</a>, but testing whether installing apps works and how the marketplace feels in-context involved putting my local development repository into <b>Gaia</b>, the phone's UI. I've been asked how to accomplish this feat numerous times, and it's easy enough to do that I thought I'd share it here!</p>
+
+    <h2>Running Gaia on B2G</h2>
+
+    <p>Firefox OS has two components- the underlying platform layer (called Boot To Gecko), and the user interface (called Gaia). I did the following to get these working together on my machine:</p>
+
+    <p>Start by downloading a Desktop build of B2G. Mozilla generates these nightly in the same way we generate builds of Firefox. They're located on our FTP server:</p>
+
+    <ul><li><a href="https://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-17.0a1.en-US.mac64.dmg">Mac</a></li>
+    <li><a href="https://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-16.0a1.en-US.win32.zip">Windows</a></li>
+    <li><a href="https://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-17.0a1.en-US.linux-i686.tar.bz2">Linux</a></li>
+    </ul><p>Check out a copy of <a href="https://github.com/mozilla-b2g/gaia">Gaia</a>:</p>
+
+    <pre><code>git clone https://github.com/mozilla-b2g/gaia.git</code></pre>
+
+    <p><code>cd</code> into your gaia repo.</p>
+
+    <pre><code>make profile</code></pre>
+
+    <p>This will generate a <code>profile</code> directory in your gaia repo.</p>
+
+    <p>Start B2G using the generated profile as your profile. The B2G binary looks a lot like a Firefox binary; that's no coincidence! You can use the command line to specify a startup profile just as you would Firefox.</p>
+
+    <pre><code>b2g --profile &lt;path to gaia profile&gt;</code></pre>
+
+    <p>On my machine, the command looks like this:</p>
+
+    <pre><code>/Applications/B2G.app/Contents/MacOS/b2g --profile /Users/potch/gaia/profile</code></pre>
+
+    <p>If things are configured properly, B2G should start up using Gaia! This is all well and good, but I want to check out the app I'm working on in Gaia — Not too tricky!</p>
+
+    <h2>Running your app on Gaia</h2>
+
+    <p>If I'm building a packaged app, I just need to symlink or copy the directory of my app to the <code>apps</code> directory of Gaia. If I'm building a hosted app, It's only a little trickier to add your app in. To add your apps, create a directory in the `external-apps` folder containing 2 files:</p>
+
+    <ul><li><code>origin</code>: this should contain the origin of your app (eg: <code>http://localhost</code> if you're developing locally)</li>
+    <li><code>manifest.webapp</code> This is exactly what it sounds like- it's the manifest of your webapp.</li>
+    </ul><p>Once you've put your app in gaia, re-run <code>make profile</code> to re-generate the profile, and re-launch B2G. Your app should now appear on the Homescreen! If your app is packaged, you'll need to re-build your profile to see changes you make to your app. If your app is hosted, you'll only need to re-build if you change your origin or manifest.</p>
+
+    <p>Happy Hacking!</p>
+
+    <p class="meta">
+    posted <span class="posted">2012-08-24</span>
+     <a href="/blog/developing-b2g-apps.html">#</a></p>
+
+</article>
+  
     <article><h1>One More Time, With Feeling</h1>
   <p>
     <a href="http://www.flickr.com/photos/rachaelvoorhees/1324652977/in/photostream/">
