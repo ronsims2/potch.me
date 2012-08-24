@@ -1,13 +1,13 @@
 <article class="draft">
     <h1>How I develop Firefox OS apps on Desktop</h1>
 
-    <p>I've been working on the Marketplace for Mozilla's upcoming <a href="http://www.mozilla.org/en-US/b2g/">Firefox OS</a> mobile phone platform, and it involves testing how the application looks and feels in the context of the OS. I can simulate the size of the phone in my browser using Firefox's amaxing <a href="http://paulrouget.com/e/devtoolsupdate/">Responsive Mode</a>, but to test whether installing apps works or how the marketplace feels in-context, I put my local development repository into <b>Gaia</b>, the phone's UI. I've been asked how to do this a bunch of times, and it's easy enough to do that I thought I'd share it here!</p>
+    <p>I've been working on the Marketplace for Mozilla's upcoming <a href="http://www.mozilla.org/en-US/b2g/">Firefox OS</a> mobile phone platform, which involves testing how web applications look and feel in the context of the OS. I can simulate the size of the phone in my browser using Firefox's amaxing <a href="http://paulrouget.com/e/devtoolsupdate/">Responsive Mode</a>, but testing whether installing apps works and how the marketplace feels in-context involved putting my local development repository into <b>Gaia</b>, the phone's UI. I've been asked how to accomplish this feat numerous times, and it's easy enough to do that I thought I'd share it here!</p>
 
     <h2>Running Gaia on B2G</h2>
 
-    <p>Firefox OS has two components- the underlying platform layer (we call Boot To Gecko), and the user interface (we call Gaia). I did the following to get these working together on my machine:</p>
+    <p>Firefox OS has two components- the underlying platform layer (called Boot To Gecko), and the user interface (called Gaia). I did the following to get these working together on my machine:</p>
 
-    <p>Pick up a Desktop build of B2G. Mozilla generates these nightly in the same way we generate builds of Firefox. They're located on our FTP server:</p>
+    <p>Start by downloading a Desktop build of B2G. Mozilla generates these nightly in the same way we generate builds of Firefox. They're located on our FTP server:</p>
 
     <ul>
     <li><a href="https://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-17.0a1.en-US.mac64.dmg">Mac</a></li>
@@ -25,7 +25,7 @@
 
     <p>This will generate a <code>profile</code> directory in your gaia repo.</p>
 
-    <p>Start B2G using the generated profile as your profile. The B2G binary looks a lot like a Firefox binary. That's no coincidence! You can use the command line to specify a startup profile just as you would Firefox.</p>
+    <p>Start B2G using the generated profile as your profile. The B2G binary looks a lot like a Firefox binary; that's no coincidence! You can use the command line to specify a startup profile just as you would Firefox.</p>
 
     <pre><code>b2g --profile &lt;path to gaia profile&gt;</code></pre>
 
@@ -33,11 +33,11 @@
 
     <pre><code>/Applications/B2G.app/Contents/MacOS/b2g --profile /Users/potch/gaia/profile</code></pre>
 
-    <p>If things are setup properly, B2G should start up using Gaia!</p>
+    <p>If things are configured properly, B2G should start up using Gaia! This is all well and good, but I want to check out the app I'm working on in Gaia &mdash; Not too tricky!</p>
 
     <h2>Running your app on Gaia</h2>
 
-    <p>This is all well and good, but I want to check out the app I'm working on in Gaia. Not too tricky! If I'm building a packaged app, I just need to symlink or copy the directory of my app to the <code>apps</code> directory of Gaia. If I'm building a hosted app, It's only a little trickier to add your app in. In the gaia repo, there's a folder called <code>external-apps</code>. To add your apps, create a directory in that folder containing 2 files:</p>
+    <p>If I'm building a packaged app, I just need to symlink or copy the directory of my app to the <code>apps</code> directory of Gaia. If I'm building a hosted app, It's only a little trickier to add your app in. To add your apps, create a directory in the `external-apps` folder containing 2 files:</p>
 
     <ul>
     <li><code>origin</code>: this should contain the origin of your app (eg: <code>http://localhost</code> if you're developing locally)</li>
