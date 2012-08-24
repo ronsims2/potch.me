@@ -30,7 +30,7 @@ def render_new():
 
 
 def render_all():
-    render_list(os.listdir('./posts'))
+    render_list(os.listdir('./posts'), force=True)
 
 
 def start_server():
