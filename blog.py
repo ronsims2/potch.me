@@ -18,9 +18,9 @@ def main():
         elif cmd == 'rank':
             render_index();
         else:
-            print '...yes?'
+            print '...yes? (all,new,watch,rank)'
     else:
-        print '...yes?'
+        print '...yes? (all,new,watch,rank)'
 
 
 def render_new():
@@ -34,7 +34,7 @@ def render_all():
 
 
 def start_server():
-    PORT = 8080
+    PORT = 9091
     Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
     httpd = SocketServer.TCPServer(("", PORT), Handler)
     print "serving at port", PORT
