@@ -14,11 +14,12 @@ def render_single(file, force=False):
         return False
     post_dict = {
         'title': post('h1').text(),
-        'html': unicode(post.outerHtml())
+        'html': read_post(file)
     }
+    print post_dict
     template = env.get_template('single_post.html')
     output = template.render({ 'post': post_dict })
-    write_post(file, unicode(output))
+    write_post(file, unicode(output).encode('utf-8'))
     return True
 
 
@@ -33,6 +34,7 @@ def read_post(file):
 def write_post(file, content):
     post_path = './rendered/%s' % (file)
     post_file = open(post_path, 'w')
+    print post_path
     post_file.write(content)
 
 
@@ -48,14 +50,16 @@ def render_index(num_posts=5):
     posts = sorted(posts, cmp=lambda a, b: cmp(b[1], a[1]))[:10]
     for post, ctime in posts:
         doc = pq(read_post(post))
-        doc('.meta').append(' <a href="/blog/%s">#</a>' % (post))
-        posts_dict.append({ 'html': doc.outerHtml() })
+        if not len(doc(('article.draft'))):
+            doc('.meta').append(' <a href="/blog/%s">#</a>' % (post))
+            posts_dict.append({ 'html': doc.outerHtml() })
     template = env.get_template('index.html')
-    output = unicode(template.render({ 'posts': posts_dict }))
-    write_post('index.html', output)
+    output = template.render({ 'posts': posts_dict })
+    write_post('index.html', unicode(output).encode('utf-8'))
 
 
 def render_list(files, force=False):
+    post_cache = {}
     files_rendered = 0;
     for filename in files:
         print 'rendering %s... ' %  (filename),
@@ -66,4 +70,3 @@ def render_list(files, force=False):
             print 'skipped'
 
     print '%d file%s rendered' % (files_rendered, '' if files_rendered == 1 else 's')
-    

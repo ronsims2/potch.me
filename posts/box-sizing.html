@@ -1,0 +1,164 @@
+<article id="box-sizing" class="draft">
+  <style>
+    #box-sizing .row {
+      overflow: hidden;
+    }
+
+    #box-sizing .col {
+      width: 50%;
+      float: left;
+    }
+
+    #box-sizing .content {
+      border: 10px solid blue;
+      padding: 1em;
+    }
+
+    #box-sizing .magic .col {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+  </style>
+  <h1>box-sizing FTW&hellip;</h1>
+  <p>
+    Let's create two floated columns of content each half the page width. Let's
+    keep the content from touching with a padding, and add a nice border
+    too. Here's some nice semantic CSS:
+  </p>
+  <pre>
+    .row {
+      overflow: hidden;
+    }
+
+    .col {
+      width: 50%;
+      float: left;
+    }
+
+    .content {
+      border: 10px solid blue;
+      padding: 1em;
+    }
+  </pre>
+  <h2>Without box-sizing</h2>
+  <p>Here's our markup!</p>
+  <pre>
+    &lt;section class="row">
+      &lt;div class="col content">
+        Lorem ipsum&hellip;
+      &lt;/div>
+      &lt;div class="col content">
+        Lorem ipsum&hellip;
+      &lt;/div>
+    &lt;/section>
+  </pre>
+  <section class="row naive">
+    <div class="col content">
+      Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+      ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="col content">
+      Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+      ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </section>
+
+  <h2>Well crap. Let's try that again.</h2>
+  <p>Here's our new markup. This may look familiar:</p>
+  <pre>
+    &lt;section class="row">
+      &lt;div class="col">
+        &lt;div class="content">
+          Lorem ipsum&hellip;
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="col">
+        &lt;div class="content">
+          Lorem ipsum&hellip;
+        &lt;/div>
+      &lt;/div>
+    &lt;/section>
+  </pre>
+  <section class="row nested">
+    <div class="col">
+      <div class="content">
+        Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+    <div class="col">
+      <div class="content">
+        Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+  </section>
+  <p>Shame about that extra nested div&hellip; But wait!</p>
+
+  <h2>With box-sizing</h2>
+  <p>Using the original markup:</p>
+  <pre>
+    &lt;section class="row">
+      &lt;div class="col content">
+        Lorem ipsum&hellip;
+      &lt;/div>
+      &lt;div class="col content">
+        Lorem ipsum&hellip;
+      &lt;/div>
+    &lt;/section>
+  </pre>
+  <p>And some new CSS:</p>
+  <pre>
+    .col {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+  </pre>
+  <p>and <i>voila!</i></p>
+  <section class="row magic">
+    <div class="col content">
+      Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+      ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="col content">
+      Lorem ipsum zdolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+      ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </section>
+
+  <p class="meta">
+    posted on <span class="posted">2012-03-06</span>
+  </p>
+</article>
