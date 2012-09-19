@@ -21,7 +21,7 @@ var move = 200;
 
 $(window).keydown(function(e) {
     var key = e.which;
-    if (key >= 37 && key &lt; 40) {
+    if (key >= 37 && key &lt;= 40) {
         e.preventDefault();
         var left=0, top=0;
         if (key == 37) {
