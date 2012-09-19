@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>potch dot me | Click and Drag Press and Hold</title>
+    <link rel="stylesheet/less" type="text/css" href="/media/reset.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/base.less">
+    <link rel="stylesheet/less" type="text/css" href="/media/style.less">
+    <script src="/media/less-1.1.4.min.js"></script>
+    <script>
+      less.watch();
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>potch.me</h1>
+    </header>
+    
+  <article>
+    <h1><s>Click and Drag</s> Press and Hold</h1>
+
+    <p>I really loved <a href="https://www.xkcd.com/1110/">today's xkcd, "Click and Drag"</a>,
+    but couldn't bring myself to spend that much time on my tiny trackpad,
+    well, clicking and dragging. Never one to succomb to the challenge to
+    allow myself future laziness, I wrote the following code to let me move
+    around the incredible illustrated world with my keyboard. Faking mouse
+    events FTW!</p>
+
+    <p>Just copy and paste the code into your browser's JavaScript console to
+    play!</p>
+
+    <pre><code>
+
+// get the map element
+var el = $('.map')[0];
+
+// amount in pixels we want to move each keypress/hold
+var move = 200;
+
+$(window).keydown(function(e) {
+    var key = e.which;
+    if (key >= 37 && key <= 40) {
+        e.preventDefault();
+        var left=0, top=0;
+        if (key == 37) {
+            left += move;
+        }
+        if (key == 38) {
+            top += move;
+        }
+        if (key == 39) {
+            left -= move;
+        }
+        if (key == 40) {
+            top -= move;
+        }
+        var evt = document.createEvent("MouseEvents");
+        evt.initMouseEvent("mousedown", true, true, window,
+                           0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        el.dispatchEvent(evt);
+        setTimeout(function() {
+            var evt = document.createEvent("MouseEvents");
+            evt.initMouseEvent("mousemove", true, true, window,
+                               0, 0, 0, left, top, false, false, false, false, 0, null);
+            el.dispatchEvent(evt);
+            setTimeout(function() {
+                var evt = document.createEvent("MouseEvents");
+                evt.initMouseEvent("mouseup", true, true, window,
+                                   0, 0, 0, left, top, false, false, false, false, 0, null);
+                el.dispatchEvent(evt);
+            }, 0);
+        }, 0);
+    }
+});
+    </code></pre>
+
+    <p class="meta">
+    posted <span class="posted">2012-09-12</span>
+    </p>
+
+</article>
+
+
+    <script src="/media/jquery-1.6.2.js"></script>
+    <script src="/media/twist.js"></script>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f408abc844d524b45000062');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>

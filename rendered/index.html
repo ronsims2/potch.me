@@ -29,6 +29,36 @@
 
 </article>
   
+    <article><h1><s>Click and Drag</s> Press and Hold</h1>
+
+    <p>I really loved <a href="https://www.xkcd.com/1110/">today's xkcd, "Click and Drag"</a>,
+    but couldn't bring myself to spend that much time on my tiny trackpad,
+    well, clicking and dragging. Never one to succomb to the challenge to
+    allow myself future laziness, I wrote the following code to let me move
+    around the incredible illustrated world with my keyboard. Faking mouse
+    events FTW!</p>
+
+    <p>Just copy and paste the code into your browser's JavaScript console to
+    play!</p>
+
+    <pre><code>
+
+// get the map element
+var el = $('.map')[0];
+
+// amount in pixels we want to move each keypress/hold
+var move = 200;
+
+$(window).keydown(function(e) {
+    var key = e.which;
+    if (key &gt;= 37 &amp;&amp; key </code></pre>
+
+    <p class="meta">
+    posted <span class="posted">2012-09-12</span>
+     <a href="/blog/press-and-hold.html">#</a></p>
+
+</article>
+  
     <article><h1>How I develop Firefox OS apps on Desktop</h1>
 
     <p>I've been working on the Marketplace for Mozilla's upcoming <a href="http://www.mozilla.org/en-US/b2g/">Firefox OS</a> mobile phone platform, which involves testing how web applications look and feel in the context of the OS. I can simulate the size of the phone in my browser using Firefox's amazing <a href="http://paulrouget.com/e/devtoolsupdate/">Responsive Mode</a>, but testing whether installing apps works and how the marketplace feels in-context involved putting my local development repository into <b>Gaia</b>, the phone's UI. I've been asked how to accomplish this feat numerous times, and it's easy enough to do that I thought I'd share it here!</p>
