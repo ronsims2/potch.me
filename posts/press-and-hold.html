@@ -12,44 +12,33 @@
     play!</p>
 
     <pre><code>
-
 // get the map element
 var el = $('.map')[0];
 
 // amount in pixels we want to move each keypress/hold
 var move = 200;
 
+function fakeMouseEvent(type, x, y) {
+    var evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent(type, true, true, window,
+                       0, 0, 0, x, y, false, false, false, false, 0, null);
+    el.dispatchEvent(evt);
+}
+
 $(window).keydown(function(e) {
     var key = e.which;
     if (key >= 37 && key &lt;= 40) {
         e.preventDefault();
         var left=0, top=0;
-        if (key == 37) {
-            left += move;
-        }
-        if (key == 38) {
-            top += move;
-        }
-        if (key == 39) {
-            left -= move;
-        }
-        if (key == 40) {
-            top -= move;
-        }
-        var evt = document.createEvent("MouseEvents");
-        evt.initMouseEvent("mousedown", true, true, window,
-                           0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        el.dispatchEvent(evt);
+        if (key == 37) { left += move; }
+        if (key == 38) { top += move; }
+        if (key == 39) { left -= move; }
+        if (key == 40) { top -= move; }
+        fakeMouseEvent('mousedown', 0, 0);
         setTimeout(function() {
-            var evt = document.createEvent("MouseEvents");
-            evt.initMouseEvent("mousemove", true, true, window,
-                               0, 0, 0, left, top, false, false, false, false, 0, null);
-            el.dispatchEvent(evt);
+            fakeMouseEvent('mousemove', left, top);
             setTimeout(function() {
-                var evt = document.createEvent("MouseEvents");
-                evt.initMouseEvent("mouseup", true, true, window,
-                                   0, 0, 0, left, top, false, false, false, false, 0, null);
-                el.dispatchEvent(evt);
+                fakeMouseEvent('mouseup', left, top);
             }, 0);
         }, 0);
     }
