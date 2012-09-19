@@ -29,6 +29,8 @@
     <p>Just copy and paste the code into your browser's JavaScript console to
     play!</p>
 
+    <p>Here's the below code as a bookmarklet: <code><a href="javascript:function%20fakeMouseEvent(e,t,n)%7Bvar%20r=document.createEvent(%22MouseEvents%22);r.initMouseEvent(e,!0,!0,window,0,0,0,t,n,!1,!1,!1,!1,0,null),el.dispatchEvent(r)%7Dvar%20el=%24(%22.map%22)%5B0%5D,move=200;%24(window).keydown(function(e)%7Bvar%20t=e.which;if(t&gt;=37&amp;&amp;t&lt;=40)%7Be.preventDefault();var%20n=0,r=0;t==37&amp;&amp;(n+=move),t==38&amp;&amp;(r+=move),t==39&amp;&amp;(n-=move),t==40&amp;&amp;(r-=move),fakeMouseEvent(%22mousedown%22,0,0),setTimeout(function()%7BfakeMouseEvent(%22mousemove%22,n,r),setTimeout(function()%7BfakeMouseEvent(%22mouseup%22,n,r)%7D,0)%7D,0)%7D%7D);undefined;">Press and Hold</a></code></p>
+
     <pre><code>
 // get the map element
 var el = $('.map')[0];
