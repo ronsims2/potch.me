@@ -1,0 +1,289 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b1 | 201101 
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* end meyer reset */
+body,
+html {
+  min-height: 100%;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #333;
+}
+#page {
+  min-height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+header {
+  padding: 1em 2em;
+  background: #333;
+  color: #fff;
+}
+article {
+  padding: 1em 2em;
+  width: 550px;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin: 1em 0;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.25em;
+}
+p {
+  margin-bottom: 1.4em;
+}
+blockquote {
+  padding: 0 2em;
+  margin: 1em 0;
+  position: relative;
+}
+blockquote:before,
+blockquote:after {
+  font-family: Georgia, "Times New Roman", serif;
+  content: '\201C';
+  font-size: 48px;
+  position: absolute;
+  line-height: 10px;
+  top: 16px;
+  left: 0;
+  color: rgba(51, 51, 51, 0.09999999999999998);
+}
+blockquote:after {
+  content: '\201D';
+  top: auto;
+  bottom: -4px;
+}
+ul,
+ol {
+  margin-left: 2em;
+  margin-bottom: 1.4em;
+  list-style-position: outside;
+}
+li {
+  /*margin-bottom: 1em;*/
+
+}
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+ol {
+  list-style-type: decimal-leading-zero;
+}
+code,
+kbd,
+pre {
+  font-family: Monaco, Consolas, "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+pre code {
+  display: block;
+  font-size: 11px;
+  white-space: pre;
+  background: #333;
+  color: #fff;
+  border-left: 20px solid #ddd;
+  padding-left: 8px;
+  margin-top: 1em;
+}
+a {
+  color: #1144bb;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+a:visited {
+  color: #3311bb;
+}
+b,
+strong {
+  font-weight: bold;
+}
+i,
+em {
+  font-style: italic;
+}
+u {
+  text-decoration: underline;
+}
+body {
+  background: #f8f8f8;
+  line-height: 1.5em;
+}
+header h1 a:link,
+header h1 a:hover,
+header h1 a:active,
+header h1 a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+article,
+header h1 {
+  width: 550px;
+  margin: .5em auto;
+}
+article h1 {
+  line-height: 100%;
+}
+article {
+  background: #fff;
+}
+p img {
+  display: block;
+  margin: 3em auto;
+}
+pre {
+  margin-bottom: 1.4em;
+}
+.meta {
+  text-align: right;
+  color: #666;
+  font-size: 12px;
+}
+p.full {
+  margin: -1em -2em;
+}
+#twist {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
