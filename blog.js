@@ -1,4 +1,4 @@
-var djanky = require('./djanky');
+var djanky = require('djanky');
 var views = require('./views');
 
 var routes = [
@@ -6,7 +6,7 @@ var routes = [
     // preview server
     ['^/$', views.index, 'index'],
     ['^/blog/(.+)$', views.single_post, 'single_post'],
-    ['^/media/(.+)$', views.media, 'media'],
+    ['^/media/(.+)$', djanky.serve_static('media/'), 'media'],
 
     // admin actions
     ['admin/rank', views.rank, 'rank'],

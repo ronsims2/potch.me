@@ -2,6 +2,12 @@
 
 {% block content %}
   {% for post in posts %}
-    {{ post.html }}
+    <article>
+        {{ post.html }}
+        <p class="meta">
+            posted on {{ post.date }}
+            <a href="{{ post.permalink }}">#</a>
+        </p>
+    </articles>
   {% endfor %}
 {% endblock %}
