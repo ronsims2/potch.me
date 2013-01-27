@@ -71,6 +71,7 @@ function renderIndex() {
     var p = [];
     for (var i=0; i<NUM_INDEX_POSTS; i++) {
         tuple = tuples[i];
+        console.log(tuple[2].innerHTML);
         p.push({
             html: tuple[2].innerHTML,
             date: tuple[0],

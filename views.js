@@ -1,4 +1,3 @@
-var djanky = require('./djanky');
 var fs = require('fs');
 var renderer = require('./renderer');
 
@@ -10,14 +9,6 @@ exports.index = function(req, res) {
 
 exports.single_post = function(req, res, post) {
     return renderer.single_post(post);
-};
-
-exports.media = function(req, res, path) {
-    try {
-        return fs.readFileSync('media/'+path);
-    } catch (e) {
-        throw new djanky.Error404('No media found for ' + path)
-    }
 };
 
 exports.rank = function(req, res) {
