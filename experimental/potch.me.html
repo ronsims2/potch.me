@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>potch dot me!</title>
+    <link href="/rss" rel="alternate" title="Potch Dot Me!" type="application/rss+xml" />
+    <link href="/grid.css" type="text/css" rel="stylesheet" media="screen"/>
+    <link href="/site.css" type="text/css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript" src="http://use.typekit.com/cua3pmb.js"></script>
+    <script type="text/javascript">
+      try{Typekit.load({
+          active: function () {
+              if (window.initCodeBlocks) initCodeBlocks();
+          }
+      });}catch(e){}
+    </script>
+</head>
+<body>
+    <header id="masthead">
+        <div class="row">
+            <div class="column grid_14">
+                <div id="head">
+                    <h2 class="subtitle">Matt Claypotch writes here.</h2>
+                    <h1 class="title"><a href="/">Potch Dot Me</a></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page">
+        <div class="row">
+            <section class="column grid_14">
+                <div class='date'>2011-4-1</div>
+<div class="post">
+<h2 class="title"><a href="/19/he">He</a></h2>
+<div class="content">
+<p><img src="http://people.mozilla.org/~mclaypotch/he.jpg" alt="Gary Kovacs, CEO of Mozilla, in his traditional launch day headdress" /></p>
+
+<h2>is <em>actually</em> the CEO of <del>Firefox</del> Mozilla.</h2>
+
+<p>(<a href="http://verydemotivational.memebase.com/2011/02/25/demotivational-posters-he/">see the original</a>)</p>
+
+</div>
+</div>
+<div class='date'>2011-3-27</div>
+<div class="post">
+<h2 class="title"><a href="/18/generating_terrain_with_javascript_and_canvas">Generating Terrain with JavaScript and Canvas</a></h2>
+<div class="content">
+<p>I had such great plans for today, but then I came across Paul Boxley's blog post "<a href="http://paulboxley.com/blog/2011/03/terrain-generation-mark-one">Terrain generation with the diamond square algorithm</a>". You owe it to yourself to check his post out, since he explains the concepts better, presents the results better, and totally did it first.</p>
+
+<p>Since the post combined JavaScript, isometric graphics and procedural content (three of my go-to favorite things!), I found myself with an itch in need of scratching. I came up with the following after a few hours of hacking around:</p>
+
+<p><small>(<a href="http://people.mozilla.org/~mclaypotch/terraingen.html">see this demo on its own page</a>)</small>
+<iframe width=800 height=512 src="http://people.mozilla.org/~mclaypotch/terraingen.html"></iframe>
+<em>you'll need a <code>canvas</code>-capable browser that supports <code><a href="https://developer.mozilla.org/En/HTML/Canvas/Pixel_manipulation_with_canvas">getImageData()</a></code> to see anything cool above. sorry.</em></p>
+
+<p>I'm using my own implementation of the <a href="http://en.wikipedia.org/wiki/Diamond-square_algorithm">diamond-square</a> algorithm. My version is recursive and theoretically works with a heightmap of arbitrary dimensions, although it's pretty inefficient. Things I'd like to add to this implementation are z-ordering (it always draws the polys in the same order, to occasional ill effect), and a real shading algorithm.</p>
+
+<p>All in all, it's a pretty satisfying proof-of-concept, and I'm excited to have more code to contribute to my upcoming <a href="http://github.com/potch/vast/">canvas library</a> (which I will post about any day now...)</p>
+
+</div>
+</div>
+<div class='date'>2010-11-25</div>
+<div class="post">
+<h2 class="title"><a href="/15/thanksgiving_in_summary">Thanksgiving, in summary.</a></h2>
+<div class="content">
+<p><a href="http://www.flickr.com/photos/thepotch/5207695271/"><img src="http://farm5.static.flickr.com/4108/5207695271_dba21007ed.jpg" alt="" /></a></p>
+
+</div>
+</div>
+<div class='date'>2010-10-10</div>
+<div class="post">
+<h2 class="title"><a href="/13/dumbo">Dumbo.</a></h2>
+<div class="content">
+<p><a href="http://www.flickr.com/photos/thepotch/5066659663/"><img src="http://farm5.static.flickr.com/4090/5066659663_0f2fb51cf5.jpg" alt="" /></a></p>
+
+</div>
+</div>
+<div class='date'>2010-9-30</div>
+<div class="post">
+<h2 class="title"><a href="/12/the_new_stats_pages_on_addons_mozilla_org">The new stats pages on addons.mozilla.org</a></h2>
+<div class="content">
+<h3><em>Or, how I learned to stop worrying and love HTML5*</em></h3>
+
+<blockquote>
+  <p><em><strong>Note</strong>: this post is cross-posted from the
+  <a href="http://blog.mozilla.com/webdev/">Mozilla Webdev Blog</a>,
+  for which it was <a href="http://blog.mozilla.com/webdev/2010/09/30/the-new-stats-pages-on-amo">originally written</a>.</em></p>
+</blockquote>
+
+<p><style>
+    #foo {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        -o-column-count: 3;
+        width: 820px;
+        -moz-column-gap: 2em;
+        -webkit-column-gap: 2em;
+        -o-column-gap: 2em;
+        line-height: 1.4em;
+    }
+    #foo p {
+        text-indent: 1em;
+    }
+    #foo:first-letter {
+        float: left;
+        margin-right: 6px;
+        line-height: .8em;
+        font-size: 4.5em;
+        font-family: Georgia;
+        font-style: italic;
+    }
+</style>
+<article id="foo">
+Shortly after I started at Mozilla in April, I was assigned my first project — developing the replacement for <abbr title="addons.mozilla.org">AMO</abbr>’s statistics pages for add-on developers. The current page was in need of both a visual and functional refresh. One of the great things about working on AMO is that we can make certain expectations as to what browser our registered users and developers are running — namely, a recent version of a modern browser. This was exciting because it meant the new stats pages could use next-generation web features to deliver a faster and more feature-rich experience to our users. I’m excited to say that, though they’re not ready to replace the old pages quite yet, the new stats pages are fit for public preview. <a href="https://preview.addons.mozilla.org/en-US/firefox/addon/10868/statistics/">Take a look here!</a></p>
+
+<p>One of the biggest challenges on the stats pages is the management of data. We store our add-on performance statistics in what is essentially a CSV format: a set of values for each metric and date. Since performance data is historical data, we would wind serving overlapping sets of data for each pageview. I realized that if a user visiting the page today comes back tomorrow, there’s only one day of new data they haven't yet seen. The solution? <code>localStorage</code>!</p>
+
+<p>When a user visits a page for the first time, they download the data for the default time frame (which, right now, is the past 30 days). The next time they come back, the data is fetched from <code>localStorage</code> instead, and the page renders much, much faster. How does this work? When the user requests a certain time range of data, the page looks at the range of time for which it already has data. If the request is satisfied by the local data, we can skip an AJAX call. Subsequently, if any of the time range requested is <em>not</em> available locally, the server is asked only for the portion that is missing. This allows for the user to be able to use the stats pages frequently with very little additional server load.</p>
+
+<p>Having a fast persistent layer for raw data is all well and good, but analysis and visualization are what make the stats pages useful. For that I turned to another fantastic new web technology — <code>&lt;canvas&gt;</code>. We settled on using the exceptionally nifty <a href="http://www.highcharts.com/">Highcharts</a> charting library, which utilizes <code>&lt;canvas&gt;</code> and inline SVG (with graceful fallbacks) for its rendering.</p>
+
+<p>The charts, as well as all the other data-driven UI, each have their own pageview-length cache layers to store the generated objects they use internally, such as chart configuration objects and individual pages of data. If a particular object hasn’t already been generated, we request the data (going to the server if necessary) and then store the fully generated object for the length of the pageview. This allows for fast switching of data views within the page with minimal lag. The caches use a client-side cache object. that generates and accepts callbacks, to allow asynchronous actions such as AJAX requests to occur. I've posted the code for the object <a href="http://gist.github.com/605541#file_js_async_cache.js">here</a> for those interested.</p>
+
+<p>While the charts use the time-series data from the server fairly directly, a number of UI elements are presenting aggregate statistics on the raw data in the form of sums averages and ranked lists. Instead of making another request for data the page essentially has, I decided to compute aggregations locally. Realizing iterative computation is a good way to send the browser on a one-way trip to Beachball Town, I found an excellent opportunity to use <a href="https://developer.mozilla.org/En/Using_web_workers">Web Workers</a> to perform those tasks in the background. The raw data is sliced, time-wise, into the needed chunk, which is passed off to a Web Worker thread. The result? The computationally expensive job of iteratively manipulating the data is off the main thread, where it refrains from putting a chokehold on the browser, and has the added benefit of running much faster in a dedicated thread.</p>
+
+<p>In the initial implementation, I found that, at times, more than 10 workers were being spawned at a time to perform background tasks. I can count on one hand how many people I know who own a computer with more than 10 CPU cores, and I am not in that group. It wasn’t really any more efficient, and the CPU usage was hairy to boot. To address this, I wrote a simple <a href="http://gist.github.com/605541#file_js_web_worker_pool.js">Web Worker pool</a> that queues jobs and distributes them to a limited number of workers. Much better.</p>
+
+<p>Lastly, one of the goals for the new stats pages is the ability to deep-link or bookmark a particular view of the stats. On browsers that support it, the URL for the current view is being updated using the new <a href="https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history#The_pushState%28%29.c2.a0method"><code>history.pushState()</code></a>. Of course, we fall back to <code>location.hash</code> when the fancier API isn’t available.</p>
+
+<p>The process of building the new stats pages led me to this realization: A lot of the demos of HTML5 and its associated trappings spend great effort trying to visually dazzle, and it’s way too easy to write it all off as nothing but eye candy. What people forget is that a lot of the new features in modern web browsers have practical ways to make the development process cleaner, the user experience faster, and the end-result more sophisticated. Though truth be told, prettier pages aren’t so bad either.</p>
+
+<p><sup>* and CSS3, and next-generation JS APIs.</sup>
+</article></p>
+
+</div>
+</div>
+            </section>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="row">
+            <div class="column grid_4">
+              <aside>
+                <div class="sidehead">About</div>
+                <div class="content">
+                  <img id="biophoto" src="/img/bio.png"/>
+                  Matt "Potch" Claypotch is a web developer (<b>At Mozilla!</b>),
+                  geek, and all-around swell guy who currently resides in
+                  Mountain View, California.
+                </div>
+              </aside>
+            </div>
+            <div class="column grid_6">
+              <aside>
+                <div class="sidehead flickr">
+                  flick<span class="pink">r</span>
+                </div>
+                <div id="flickrphotos" class="content flickr">
+                  <div> Loading... </div>
+                </div>                    
+              </aside>
+            </div>
+            <div class="column grid_4">
+                <div class="sosumi">
+                    <abbr id="ccdingbat" title="Creative Commons">cc</abbr>
+                    All content produced for this site is released under a Creative Commons <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Attribution-Noncommercial Share-Alike 3.0 License</a>. Want to use something here in a commercial project? Contact me!
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+<!--     <script type="text/javascript" src="/js/twitter.php"></script> -->
+    <script type="text/javascript" src="/js/sidebar.js"></script>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-784012-2");
+pageTracker._trackPageview();
+} catch(err) {}</script></body>
+</html>
